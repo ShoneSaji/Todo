@@ -5,6 +5,8 @@ from work_app.models import User,Taskmodel
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from django.utils.decorators import method_decorator
+
+
 # Create your views here.
 
  
@@ -58,6 +60,14 @@ class Update_user(View):
         return render(request,"register.html",{"form":form})
 
 
+    def post(self,request,**kwargs):
+        id=kwargs.get("pk")
+        data=User.objects.get(id=id)
+        form=Register(request.POST,instance=data)
+        if form.is_valid():
+            form.save()
+        return redirect("login")
+
 
 
 class Logging(View):
@@ -86,6 +96,8 @@ class Logging(View):
             else:
                 print("incorrect credentials")
                 return render(request,"login.html")
+            
+            
 
 @method_decorator(signin_required,name='dispatch')
 class Add_Task(View):

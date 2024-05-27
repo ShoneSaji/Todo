@@ -1,0 +1,49 @@
+method:post
+url:http://127.0.0.1:8000/api/register/
+data: 
+  "id": 11,
+  "username": "Dominic",
+  "email": "dominic@gmail.com",
+  "password": "pbkdf2_sha256$600000$BDTMAh3nGA7iFlnCrDv1h9$Q+m1frPUfjDWoOQO8vcfAxB2HIepeNljFveM6DXrndQ=",
+  "first_name": "Dominic",
+  "last_name": "Peter"
+
+
+**********************************************************************
+
+method:list
+url:http://127.0.0.1:8000/api/todos/
+data:nil
+
+*******************************************
+
+method:create
+url:http://127.0.0.1:8000/api/todos/
+data:"task_name": "seminar",
+     "task_description": "last sem"
+
+*******************************************
+
+method:update
+url:http://127.0.0.1:8000/api/todos/2/
+data: "task_name": "seminar2",
+  "task_description": "last seminar",
+
+*******************************************
+method:retrive
+url:http://127.0.0.1:8000/api/todos/2/
+data:nil
+
+********************************************
+method:destroy
+url:http://127.0.0.1:8000/api/todos/12
+data:nil
+
+
+*******************************************************************************
+
+*****TOKEN**********
+method:post
+url:http://127.0.0.1:8000/api/token/
+data:username:
+    password:

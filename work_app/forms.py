@@ -7,11 +7,11 @@ class Register(forms.ModelForm):
         model=User
         fields=["username","first_name","last_name","email","password"]
         widgets={
-            'username':forms.TextInput(attrs={'class':'form-control','placeholder':'enter username'}),  #form-control is bootstrap class
+            # 'username':forms.TextInput(attrs={'class':'form-control','placeholder':'enter username'}),  #form-control is bootstrap class
             'first_name':forms.TextInput(attrs={'class':'form-control','placeholder':'enter firstname'}),
             'last_name':forms.TextInput(attrs={'class':'form-control','placeholder':'enter lastname'}),
             'email':forms.EmailInput(attrs={'class':'form-control','placeholder':'enter valid email'}),
-            'password':forms.PasswordInput(attrs={'class':'form-control','placeholder':'password must be strong'})
+            # 'password':forms.PasswordInput(attrs={'class':'form-control','placeholder':'password must be strong'})
         }
 
 

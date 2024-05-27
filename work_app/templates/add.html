@@ -15,7 +15,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body>
+<body style="color: crimson;">
     <div class="container">
         <h3 class="text-center mt-3">ADD TASK</h3>
         <br>
@@ -29,27 +29,27 @@
                 </style>
                 <nav class="navbar navbar-expand-lg bg-body-tertiary">
                     <div class="container">
-                      <a class="navbar-brand" href="#">TaskBuddy<i class="fa-solid fa-list-check ms-2"></i></a>
+                      <a class="navbar-brand" href="#" style="color: crimson;">TaskBuddy<i class="fa-solid fa-list-check ms-2" style="color: crimson;"></i></a>
                       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                       </button>
                       <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                           <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="#" style="color: crimson;">Home</a>
                           </li>
                           
                           <li class="nav-item ms-5">
                             <form class="d-flex" role="search" method="post">
                             {%csrf_token%} 
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
+                            <button class="btn btn-outline-dark" type="submit" style="color: crimson;">Search</button>
                           </form>
                         </li>
                         </ul>
                         <ul class="navbar-nav me-5">
                           <li class="nav-item dropdown me-5 mx-5">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: crimson;">
                             <img src="" alt="Avatar" class="avatar">
                             </a>
                             <ul class="dropdown-menu">
@@ -63,13 +63,12 @@
                               <li><a class="dropdown-item text-primary" href="{% url 'del' i.user_id %}">Delete account</a></li>
                               <li><hr class="dropdown-divider"></li>
                               <li><a class="dropdown-item text-primary btn btn-primary" href="#">Turn on Notification</a></li>
-                              
                               {%endfor%}
                             </ul>
                           </li>
                          </ul>
                          <ul class="navbar-nav">
-                            <a href="#" class="btn btn-dark">Logout</a>
+                            <a href="#" class="btn btn-outline-dark" style="color: crimson;">Logout</a>
                         </ul>
                         
                       </div>
@@ -83,12 +82,12 @@
         </div>
         {%endfor%}
         {%endif%}
-        <div class="border border-info mt-3 border rounded shadow">
+        <div class="border border-dark mt-3 border rounded shadow">
             <form action="" method="post" class="my-3 mx-3">
                 {%csrf_token%}
                 {{form.as_p}}
                 <div class="text-center">
-                    <button type="submit" class="btn btn-primary my-3">submit</button>
+                    <button type="submit" class="btn btn-outline-dark my-3" style="color:crimson">submit</button>
                 </div>
             </form>
         </div>
@@ -109,9 +108,9 @@
                     {% if i.completed == True %}
                     <td>✔</td>
                     {% elif i.completed == False %}
-                    <td><a href="{% url 'edit' i.id %}" class="btn btn-outline-primary">Not completed</a></td>
+                    <td><a href="{% url 'edit' i.id %}" class="btn btn-outline-dark" style="color:sandybrown;">Not completed</a></td>
                     {%endif%}
-                    <td><a href="{% url 'delete' i.id %}" class="btn btn-outline-success">Delete</a></td>
+                    <td><a href="{% url 'delete' i.id %}" class="btn btn-outline-dark" style="color:deepskyblue">Delete</a></td>
                 </tr>
                 {%endfor%}
             </table>
