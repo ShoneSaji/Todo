@@ -47,3 +47,17 @@ method:post
 url:http://127.0.0.1:8000/api/token/
 data:username:
     password:
+
+
+
+**********************ModelViewSet**********************************
+
+1. Api for fetching token
+  method:post
+  body:{username,password}
+
+2. Api for adding a new task
+  url:http://127.0.0.1:8000/api/todomodelview/
+  method:post
+  body:{task_name,task_description}
+  authorization:Token

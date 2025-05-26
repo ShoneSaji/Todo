@@ -23,6 +23,7 @@ schema_view = get_schema_view(
 )
 
 router=DefaultRouter()
+# router used because of viewset
 # router.register('todos',Todoviewsetview,basename='api')
 router.register('todomodelview',Todomodelviewset,basename='api')
 

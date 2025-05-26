@@ -5,6 +5,7 @@ from api.serializers import Registration,User,Todoserializer
 from rest_framework.viewsets import ViewSet,ModelViewSet
 from work_app.models import Taskmodel
 from rest_framework import authentication,permissions,serializers
+from api.permissions import OwnerOnly
 
 # Create your views here.
 
@@ -74,21 +75,12 @@ class Todomodelviewset(ModelViewSet):
     queryset=Taskmodel.objects.all()
     serializer_class=Todoserializer
     authentication_classes=[authentication.TokenAuthentication]
-    permission_classes=[permissions.IsAuthenticated]
-
-    def get_queryset(self):
-        return Taskmodel.objects.filter(user=self.request.user)
+    permission_classes=[OwnerOnly]
 
     def perform_create(self, serializer):
         return serializer.save(user=self.request.user)
 
-    # def perform_destroy(self, instance):
-    #     instance=Taskmodel.objects.get(id=id)  
-    #     if instance.user==self.request.user:
-
-    #         return instance.delete()
-    #     else:
-    #         print("not allowed")
+    
 
 
 
